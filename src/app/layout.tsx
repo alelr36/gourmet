@@ -20,6 +20,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<aside className="flex flex-col items-center">
 					<Link href="/">Home</Link>
+					<Link href="/admin">Admin</Link>
 					<Link href="/login">Log In</Link>
 					<Link href="">Log Out</Link>
 				</aside>
