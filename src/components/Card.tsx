@@ -16,14 +16,20 @@ export default function CardComponent({
 	image,
 }) {
 	return (
-		<Card className="shadow-md">
-			<Image
-				className="w-full h-40 object-cover"
-				src={image}
-				alt="recipe image"
-				height={100}
-				width={200}
-			/>
+		<Card className="shadow-md relative">
+			{image ? (
+				<Image
+					className="w-full h-40 object-cover"
+					src={image}
+					alt="recipe image"
+					height={100}
+					width={200}
+				/>
+			) : (
+				<div className="bg-secondary h-[10rem] flex justify-center items-center font-extrabold text-2xl text-gray-600">
+					{title}
+				</div>
+			)}
 			<CardHeader>
 				<CardTitle>{title}</CardTitle>
 				<CardDescription className="line-clamp-3 lg:line-clamp-2">
