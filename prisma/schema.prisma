@@ -25,5 +25,6 @@ model Recipe {
   ingredients                 String
   steps                       String
   tags                        String
-  image                       String
+  minutes                     Int           @default(0)
+  image                       String?
 }
