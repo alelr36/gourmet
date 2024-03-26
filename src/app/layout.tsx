@@ -18,15 +18,17 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<aside className="flex flex-col items-center">
-					<Link href="/">Home</Link>
-					<Link href="/admin">Admin</Link>
-					<Link href="/login">Log In</Link>
-					<Link href="">Log Out</Link>
-				</aside>
-				<main className="min-h-screen p-2 flex flex-col items-center">
-					{children}
-				</main>
+				<div className="grid grid-cols-1 lg:grid-cols-12">
+					<aside className="p-4 flex flex-col items-center lg:col-span-2">
+						<Link href="/">Home</Link>
+						<Link href="/admin">Admin</Link>
+						<Link href="/login">Log In</Link>
+						<Link href="">Log Out</Link>
+					</aside>
+					<main className="min-h-screen p-4 flex flex-col items-center lg:col-span-10">
+						{children}
+					</main>
+				</div>
 			</body>
 		</html>
 	);
