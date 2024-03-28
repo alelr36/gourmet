@@ -7,6 +7,15 @@ import {
 	CardDescription,
 	CardContent,
 } from './ui/card';
+import { ReactNode } from 'react';
+
+type CardComponentProps = {
+	title?: ReactNode;
+	description?: ReactNode;
+	content?: ReactNode;
+	footer?: ReactNode;
+	image?: string | null;
+};
 
 export default function CardComponent({
 	title,
@@ -14,7 +23,7 @@ export default function CardComponent({
 	content,
 	footer,
 	image,
-}) {
+}: CardComponentProps) {
 	return (
 		<Card className="shadow-md relative">
 			{image ? (

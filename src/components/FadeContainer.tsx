@@ -1,4 +1,12 @@
-export default function FadeContainerComponent({ children }) {
+import { ReactNode } from 'react';
+
+type FadeContainerComponentProps = {
+	children: ReactNode;
+};
+
+export default function FadeContainerComponent({
+	children,
+}: FadeContainerComponentProps) {
 	return (
 		<div className="relative">
 			{children}

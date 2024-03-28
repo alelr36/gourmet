@@ -1,8 +1,8 @@
 import { Badge, BadgeVariant, BadgeProps } from './ui/badge';
 
 type BadgeGroupProps = BadgeProps & {
-	values: String[];
-	selectedValue?: String;
+	values: string[];
+	selectedValue?: string;
 	variant?: BadgeVariant;
 	selectedVariant?: BadgeVariant;
 };
