@@ -18,3 +18,15 @@ export async function updateUserSettings(userId: number, formData: FormData) {
 
 	revalidatePath('/');
 }
+
+export async function deleteRecipe(formData: FormData) {
+	const id = formData.get('id') as string;
+
+	await prisma.recipe.delete({
+		where: {
+			id: parseInt(id),
+		},
+	});
+
+	revalidatePath('/');
+}

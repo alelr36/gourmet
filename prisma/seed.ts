@@ -2,6 +2,17 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+const methods = ['Roasted', 'Grilled', 'Boiled', 'Smoked', 'Fried', 'Aged'];
+const meats = ['Chicken', 'Beef', 'Fish', 'Lamb', 'Turkey', 'Octopus'];
+const sides = [
+	'Potatoes',
+	'Spaghetti',
+	'Vegetables',
+	'Onions',
+	'Mushrooms',
+	'Salad',
+];
+
 const images = [
 	'https://www.insidetherustickitchen.com/wp-content/uploads/2017/11/Italian-Beef-Ragu-740px-Inside-the-Rustic-Kitchen-26.jpg',
 	'',
@@ -20,7 +31,6 @@ const images = [
 
 const recipe = {
 	id: 1,
-	name: 'Test Name',
 	description:
 		'Italian ragù alla bolognese is a slowly cooked meat-based sauce, and its preparation involves several techniques, including sweating, sautéing and braising. Ingredients include a characteristic soffritto of onion, celery and carrot, different types of minced or finely chopped beef, often alongside small amounts of fatty pork. White wine, milk, and a small amount of tomato paste or tomato sauce are added, and the dish is then gently simmered at length to produce a thick sauce.',
 	ingredients:
@@ -38,7 +48,7 @@ async function main() {
 			where: { id },
 			update: {},
 			create: {
-				name: recipe.name,
+				name: `${methods[Math.floor(Math.random() * 6)]} ${meats[Math.floor(Math.random() * 6)]} with ${sides[Math.floor(Math.random() * 6)]}`,
 				description: recipe.description,
 				ingredients: recipe.ingredients,
 				steps: recipe.steps,
